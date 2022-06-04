@@ -3,6 +3,7 @@ package com.example.calcapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,11 +22,7 @@ class MainActivity : AppCompatActivity() {
                // var kaitou = edittext1 + edittext2
                // textview1.text = kaitou.toString()
             }catch (e: Exception){
-                var intent = Intent(this,SecondActivity::class.java)
-                intent.putExtra("VALUE1","空白があります")
-                intent.putExtra("VALUE2","空白があります")
-                startActivity(intent)
-                textview1.text = "空白があります。"
+                Log.d("error","空白かNULLがあります")
             }
         }
 
