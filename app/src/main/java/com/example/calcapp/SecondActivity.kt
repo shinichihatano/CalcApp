@@ -10,8 +10,12 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        var edittext4 = intent.getFloatExtra("VALUE1",0F)
-        var edittext5 = intent.getFloatExtra("VALUE2",0F)
-        textview.text = "${edittext4 + edittext5}"
+        var edittext1 = intent.getFloatExtra("VALUE1",0F)
+        var edittext2 = intent.getFloatExtra("VALUE2",0F)
+        textview.text = "${edittext1 + edittext2}"
+
+        var edittext3 = intent.getFloatExtra("VALUE3",0F)
+        var edittext4 = intent.getFloatExtra("VALUE4",0F)
+        textview.text = "${edittext3 - edittext4}"
     }
 }
