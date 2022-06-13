@@ -14,8 +14,10 @@ class MainActivity : AppCompatActivity() {
         pulsbutton.setOnClickListener{
             try {
                 var intent = Intent(this,SecondActivity::class.java)
-                intent.putExtra("VALUE1",editText1.text.toString().toFloat())
-                intent.putExtra("VALUE2",editText2.text.toString().toFloat())
+                var num1 = editText1.text.toString().toFloat()
+                var num2 = editText2.text.toString().toFloat()
+                var result = num1 + num2
+                intent.putExtra("VALUE1",result)
                 startActivity(intent)
             }catch (e: Exception){
                 Log.d("error","空白かNULLがあります")
@@ -25,13 +27,11 @@ class MainActivity : AppCompatActivity() {
         minusbutton.setOnClickListener{
             try {
                 var intent = Intent(this,SecondActivity::class.java)
-                intent.putExtra("VALUE3",editText1.text.toString().toFloat())
-                intent.putExtra("VALUE4",editText2.text.toString().toFloat())
+                var num1 = editText1.text.toString().toFloat()
+                var num2 = editText2.text.toString().toFloat()
+                val result = num1 - num2
+                intent.putExtra("VALUE1",result)
                 startActivity(intent)
-                //var edittext1 = editText1.text.toString().toFloat()
-                //var edittext2 = editText2.text.toString().toFloat()
-                //var kaitou = edittext1 - edittext2
-                //textview1.text = kaitou.toString()
             }catch (e:Exception){
                 Log.d("error","空白かNULLがあります")
             }
@@ -39,24 +39,28 @@ class MainActivity : AppCompatActivity() {
 
         timesbutton.setOnClickListener{
             try {
-                var edittext1 = editText1.text.toString().toFloat()
-                var edittext2 = editText2.text.toString().toFloat()
-                var kaitou = edittext1 * edittext2
-                textview1.text = kaitou.toString()
+                var intent = Intent(this,SecondActivity::class.java)
+                var num1 = editText1.text.toString().toFloat()
+                var num2 = editText2.text.toString().toFloat()
+                val result = num1 * num2
+                intent.putExtra("VALUE1",result)
+                startActivity(intent)
             }catch (e:Exception){
-                textview1.text = "空白があります。"
+                Log.d("error","空白かNULLがあります")
             }
 
         }
 
         dividedbutton.setOnClickListener{
             try {
-                var edittext1 = editText1.text.toString().toFloat()
-                var edittext2 = editText2.text.toString().toFloat()
-                var kaitou = edittext1 / edittext2
-                textview1.text = kaitou.toString()
+                var intent = Intent(this,SecondActivity::class.java)
+                var num1 = editText1.text.toString().toFloat()
+                var num2 = editText2.text.toString().toFloat()
+                val result = num1 / num2
+                intent.putExtra("VALUE1",result)
+                startActivity(intent)
             }catch(e:Exception){
-                textview1.text = "空白があります。"
+                Log.d("error","空白かNULLがあります")
             }
         }
     }
